@@ -14,13 +14,15 @@ function addAuthView(url, view, provider, ...before) {
  * @returns {void}
  */
 function addView(url, view = url, provider = {}, ...before) {
-  app.get(typeof url === 'string' ? '/' + url : url, before, (req, res) => {
+  router.get(typeof url === 'string' ? '/' + url : url, before, (req, res) => {
     render(req, res, view, (typeof provider === 'function' ? provider(req, res) : provider))
   })
 }
 function render(req, res, view, settings) {
-  res.render(`@chat/${view}.pug`/, { ...req.params, req, res, db, ...settings })
+  res.render(`@chat/${view}.pug`, { ...req.params, req, res, db, ...settings })
 }
 // #endregion
 
 addView('/', 'root.pug')
+
+module.exports = router
