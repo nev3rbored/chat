@@ -1,5 +1,6 @@
 const express = require("express")
 const router = express.Router()
+const { db, save } = require("../db.js")
 router.use(express.static(__dirname + '/static'))
 
 // #region
@@ -23,6 +24,6 @@ function render(req, res, view, settings) {
 }
 // #endregion
 
-addView('/', 'root.pug')
+addView('/', 'root')
 
 module.exports = router

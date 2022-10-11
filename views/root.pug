@@ -1,0 +1,25 @@
+extends ./_base
+
+block styles
+  +sheet('chat.css')
+
+block title
+  | Grid
+
+block content
+  div#root.full
+
+block scripts
+  script(src="https://unpkg.com/@babel/standalone/babel.min.js")
+  script(src="https://unpkg.com/react@18/umd/react.development.js")
+  script(src="https://unpkg.com/react-dom@18/umd/react-dom.development.js")
+  script(src="/socket.io/socket.io.js")
+  script(type="text/babel" src="Icon.js")
+  script(type="text/babel" src="Chat.js")
+  script(type="text/babel" src="Userlist.js")
+  script(type="text/babel" src="App.js")
+  script(type="text/babel" src="Boundary.js")
+  script(type="text/babel" src="chat.js")
+
+block topbar
+  
